@@ -1,4 +1,4 @@
-namespace C_Sharp_Playgrounds_Test
+namespace CSharpPlaygroundsTest
 {
     public class UnitTest1
     {
