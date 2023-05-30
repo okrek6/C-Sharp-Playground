@@ -1,6 +1,6 @@
-﻿using C_Sharp_Playground.Models.Interfaces;
+﻿using CSharpPlayground.Models.Interfaces;
 
-namespace C_Sharp_Playground.Models
+namespace CSharpPlayground.Models
 {
     public class Car : IVehicle // public class List<T> : IList<T>, IList, IReadOnlyList<T>
     {

@@ -1,4 +1,4 @@
-﻿namespace C_Sharp_Playground.Models.Interfaces
+﻿namespace CSharpPlayground.Models.Interfaces
 {
     public interface IVehicle
     {
