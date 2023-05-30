@@ -1,3 +1,5 @@
+using C_Sharp_Playground.Models;
+using C_Sharp_Playground.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CSharpPlayground.Controllers
@@ -6,33 +8,25 @@ namespace CSharpPlayground.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
 
-        private static List<string> SummariesList = new List<string>();
-        
+        WeatherForecastService service;
         private readonly ILogger<WeatherForecastController> _logger;
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
+            service = new WeatherForecastService();
+
             _logger = logger;
         }
         /// <summary>
-        /// as;lkdjfa;lskdjf
+        /// Gets weather
         /// </summary>
         /// <returns></returns>
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecast> Get(int x)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            //Random.Shared.Next(1, 10)
+            return service.GetWeather("test");
         }
     }
 }
