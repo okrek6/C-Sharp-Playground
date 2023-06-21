@@ -1,10 +1,10 @@
-﻿using C_Sharp_Playground.Models;
-using C_Sharp_Playground.Service;
+﻿using CSharpPlayground.Models;
+using CSharpPlayground.Service;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace C_Sharp_Playground.Controllers
+namespace CSharpPlayground.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,4 +1,4 @@
-﻿namespace C_Sharp_Playground.Data
+﻿namespace CSharpPlayground.Data
 {
     public class TaskData
     {

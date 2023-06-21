@@ -1,6 +1,6 @@
-﻿using C_Sharp_Playground.Models;
+﻿using CSharpPlayground.Models;
 
-namespace C_Sharp_Playground.Service
+namespace CSharpPlayground.Service
 {
     public class TaskService
     {
