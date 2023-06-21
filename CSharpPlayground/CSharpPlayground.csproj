@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>C_Sharp_Playground</RootNamespace>
+    <RootNamespace>CSharpPlayground</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

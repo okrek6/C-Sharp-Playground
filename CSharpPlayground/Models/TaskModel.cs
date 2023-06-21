@@ -1,4 +1,4 @@
-﻿namespace C_Sharp_Playground.Models
+﻿namespace CSharpPlayground.Models
 {
     public class TaskModel
     {
