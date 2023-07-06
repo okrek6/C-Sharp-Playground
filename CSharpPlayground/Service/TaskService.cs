@@ -34,7 +34,8 @@ namespace C_Sharp_Playground.Service
         }
         public bool DeleteTask(Guid id) // remove it from the list
         {
-            var task = databaseLOL.FirstOrDefault(existingTask => existingTask.Id == task.Id);
+            // databaseLOL is a list, existingTask is considered a member of that list in this case
+            var task = databaseLOL.FirstOrDefault(existingTask => existingTask.Id == id);
 
             if (task == null)
                 return false;
@@ -46,8 +47,9 @@ namespace C_Sharp_Playground.Service
         }
         public TaskModel GetTaskById(Guid id) //select it from the list
         {
-            //Find task by I.D.
-            var task = databaseLOL.FirstOrDefault(existingTask => existingTask.Id == task.Id);
+            // Find task by I.D.
+            // databaseLOL is a list, existingTask is considered a member of that list in this case
+            var task = databaseLOL.FirstOrDefault(existingTask => existingTask.Id == id);
 
             return task;
         }
