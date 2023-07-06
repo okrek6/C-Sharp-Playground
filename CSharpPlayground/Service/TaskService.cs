@@ -12,9 +12,24 @@ namespace C_Sharp_Playground.Service
         }
         public TaskModel CreateTask(TaskModel task) // add it to the list
         {
+            if (task.Creator == string.Empty)
+                throw new ArgumentException("Cannot create Task without a Creator");
+            if (task.Title == string.Empty)
+                throw new ArgumentException("Cannot create Task without a Title");
+
             task.Id = Guid.NewGuid();
             databaseLOL.Add(task);
-            return task;
+
+            var taskReturn = new TaskModel();
+            taskReturn.Id = task.Id;
+            taskReturn.Assignee = task.Assignee;
+            taskReturn.Creator = task.Creator;
+            taskReturn.Secret = task.Secret;
+            taskReturn.Description = task.Description;
+            taskReturn.DueDate = task.DueDate;
+            taskReturn.Title = task.Title;
+
+            return taskReturn;
         }
         public TaskModel UpdateTask(TaskModel task) // some fields shouldn't be editable create a new model for updates
         {
