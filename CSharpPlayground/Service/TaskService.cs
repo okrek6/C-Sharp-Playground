@@ -34,15 +34,27 @@ namespace C_Sharp_Playground.Service
         }
         public bool DeleteTask(Guid id) // remove it from the list
         {
-            throw new NotImplementedException();
+            var task = databaseLOL.FirstOrDefault(existingTask => existingTask.Id == task.Id);
+
+            if (task == null)
+                return false;
+
+            databaseLOL.Remove(task);
+
+            return true;
+
         }
         public TaskModel GetTaskById(Guid id) //select it from the list
         {
-            throw new NotImplementedException();
+            //Find task by I.D.
+            var task = databaseLOL.FirstOrDefault(existingTask => existingTask.Id == task.Id);
+
+            return task;
         }
         public IEnumerable<TaskModel> GetTasks()// send the whole list
         {
-            throw new NotImplementedException();
+            return databaseLOL;
+
         }
     }
 }
