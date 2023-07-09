@@ -59,5 +59,47 @@ namespace CSharpPlaygroundsTest
             task.Title = "";
             Assert.Throws<ArgumentException>(() => subject.CreateTask(task));
         }
+        [Fact]
+        public void UpdateTask_GivenATask_UpdateItFromTheList()
+        {
+            // Arrange 
+            var existingTask = new TaskModel
+            {
+                Id = Guid.NewGuid(),
+                Title = "Existing Task",
+                Description = "This has stuff",
+                DueDate = DateTime.Parse("2023-07-08 12:34:56"),
+                Assignee = "Jordan",
+                Creator = "Brendan",
+                Secret = "So live."
+            };
+
+            subject.CreateTask(existingTask);
+
+            var updatedTask = new TaskModel
+            {
+                Id = existingTask.Id,
+                Title = "Updated Task",
+                Description = "This has more stuff",
+                DueDate = DateTime.Parse("2023-07-09 12:34:56"),
+                Assignee = "Jordan",
+                Creator = "Brendan",
+                Secret = "So live, Brother."
+            };
+
+            // Act
+            var result = subject.UpdateTask(updatedTask);
+
+            // Assert
+            Assert.Equal(updatedTask.Id, result.Id);
+
+            Assert.Equal(updatedTask.Title, result.Title);
+            Assert.Equal(updatedTask.Description, result.Description);
+            Assert.Equal(updatedTask.DueDate, result.DueDate);
+            Assert.Equal(updatedTask.Assignee, result.Assignee);
+            Assert.Equal(updatedTask.Creator, result.Creator);
+            Assert.Equal(updatedTask.Secret, result.Secret);
+
+        }
     }
 }
